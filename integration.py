@@ -9,9 +9,9 @@ def integrate_double_mc(f, (a, b), y1, y2=lambda x: 0, args=(), n=1e4):
     y = map(np.random.uniform, y1(x), y2(x))
     h = np.abs(y2(x) - y1(x))
 
-    I = np.mean((b - a) * h * f(x, y, *args))
+    sum = np.mean((b - a) * h * f(x, y, *args))
 
-    return I
+    return sum
 
 
 def integrate_laguerre(f, args=(), n=6):

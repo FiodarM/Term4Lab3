@@ -1,7 +1,8 @@
 __author__ = 'fiodar'
 
-from integration import *
 import matplotlib.pyplot as plt
+
+from integration import *
 
 
 f = lambda x, y: np.cos(x*y)
@@ -18,7 +19,7 @@ ax = fig.gca()
 ax.set_title('Integration region', fontsize=16)
 boundary = ax.plot(X, y1(X), 'r', X, y2(X), 'b')
 region = ax.fill_between(X, y1(X), y2(X), color=(0., 0.5, 0., 0.5), label='$\Omega$')
-lgnd = ax.legend(('$x-2$', '$4-x^2$'), loc='best')
+lgnd = ax.legend(('$y=x-2$', '$y=4-x^2$'), loc='best')
 Omega = ax.text(0.3, 0.5, r"$\Omega$", fontsize=200, color='w', alpha='0.5')
 Res_f = ax.text(1.4, 2.6, r"$\iint_\Omega f(x,y)dxdy=%.2f$" % integral_f, fontsize=16)
 Res_g = ax.text(1.5, 2.0, r"$\int_{0}^{\infty} g(x)dx=%.2f$" % integral_g, fontsize=16)
